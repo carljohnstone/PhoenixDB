@@ -155,6 +155,9 @@ __PACKAGE__->many_to_many("roles", "user_roles", "role");
 # Created by DBIx::Class::Schema::Loader v0.07022 @ 2016-02-07 17:41:28
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:NlH8VkDqeB3Dla/DGAdyLg
 
+sub fullname {
+    my $self = shift;
+    return $self->firstname . ' ' . $self->lastname;
+}
 
-# You can replace this text with custom code or comments, and it will be preserved on regeneration
 1;
