@@ -18,7 +18,7 @@ sub published {
 
     return $self->search({
         'published'        => 1,
-        'publication_date' => {'<',DateTime->now('time_zone' => 'Europe/London', 'locale' => 'en_GB')},
+        'publication_date' => {'<',DateTime->now('time_zone' => 'Europe/London', 'locale' => 'en_GB')->iso8601},
     });
 }
 
